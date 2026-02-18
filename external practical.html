@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    .menu{
+        display:grid;
+        grid-template-columns:repeat(5, auto);
+        gap:20px; 
+        list-style:none;
+        colour-darkgrey;
+    }
+    .menu a{
+        text-decoration:none;
+    }
+
+    .toggle{
+        display:none;
+        font-size:25px;
+        cursor:pointer;
+    }
+
+    
+    @media(max-width:768px){
+
+        .menu{
+            position:absolute;
+            top:60px;
+            left:0;
+            width:100%;
+            grid-template-columns:1fr;
+            text-align:center;
+            display:none;
+            background-color:darkgrey;
+            padding:15px 0;
+            border-top:1px solid;
+        }
+
+        .menu li{
+            padding:10px 0;
+        }
+
+        .toggle{
+            display:block;
+        }
+
+        #check:checked ~ .menu{
+            display:grid;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">MyLogo</div>
+
+    <input type="checkbox" id="check" hidden>
+    <label for="check" class="toggle">&#9776;</label>
+
+    <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+</body>
+</html>
